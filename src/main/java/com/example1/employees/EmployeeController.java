@@ -15,17 +15,30 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/addEmployee")
-    public void addEmployee(@RequestParam String name,@RequestParam int age,@RequestParam String gender) {
+    public String addEmployee(@RequestParam String name,@RequestParam int age,@RequestParam String gender) {
           Employee newEmployee= new Employee();
           newEmployee.setName(name);
           newEmployee.setAge(age);
           newEmployee.setGender(gender);
           employeeRepository.save(newEmployee);
+          return "add success";
     }
 
     @PostMapping(value = "/searchEmployee/{id}")
     public Employee searchEmployee(@PathVariable("id") Integer id) {
           return employeeRepository.findById(id).get();
     }
+
+    @PostMapping(value = "/updateEmployee/{id}")
+    public String updateEmployee(@PathVariable("id") Integer id,@RequestParam String name,
+                               @RequestParam int age,@RequestParam String gender) {
+        Employee updateEmployee=new Employee();
+        updateEmployee.setName(name);
+        updateEmployee.setAge(age);
+        updateEmployee.setGender(gender);
+        employeeRepository.save(updateEmployee);
+        return "update success";
+    }
+
 
 }
