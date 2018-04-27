@@ -23,5 +23,9 @@ public class EmployeeController {
           employeeRepository.save(newEmployee);
     }
 
+    @PostMapping(value = "/searchEmployee/{id}")
+    public Employee searchEmployee(@PathVariable("id") Integer id) {
+          return employeeRepository.findById(id).get();
+    }
 
 }
