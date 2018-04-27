@@ -39,6 +39,10 @@ public class EmployeeController {
         employeeRepository.save(updateEmployee);
         return "update success";
     }
-
+    @PostMapping(value = "/deletEmployee/{id}")
+    public String deleteEmployee(@PathVariable("id") int id) {
+        employeeRepository.deleteById(id);
+        return "delete success";
+    }
 
 }
