@@ -16,12 +16,6 @@ public class Employee implements Serializable{
 
     }
 
-   /* public Employee(int id,String name,int age,String gender) {
-        this.id=id;
-        this.name=name;
-        this.age=age;
-        this.gender=gender;
-    }*/
     public int getId() {
         return id;
     }
@@ -36,5 +30,19 @@ public class Employee implements Serializable{
 
     public String getGender() {
         return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAge(int age) {
+
+        this.age = age;
+    }
+
+    public void setName(String name) {
+
+        this.name = name;
     }
 }

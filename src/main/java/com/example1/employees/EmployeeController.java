@@ -22,6 +22,6 @@ public class EmployeeController {
           newEmployee.setGender(gender);
           employeeRepository.save(newEmployee);
     }
-    
+
 
 }
